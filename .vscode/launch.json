@@ -1,0 +1,266 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Attach",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": "<debug port of the debuggee>"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "DaemonUserThreadDemo",
+            "request": "launch",
+            "mainClass": "basicMultithreading.DaemonUserThreadDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ExtendsThreadExample",
+            "request": "launch",
+            "mainClass": "basicMultithreading.ExtendsThreadExample",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "JoinThreadExample",
+            "request": "launch",
+            "mainClass": "basicMultithreading.JoinThreadExample",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "RunnableThreadExample",
+            "request": "launch",
+            "mainClass": "basicMultithreading.RunnableThreadExample",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ThreadPriorityExample",
+            "request": "launch",
+            "mainClass": "basicMultithreading.ThreadPriorityExample",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "BlockingQueueDemo",
+            "request": "launch",
+            "mainClass": "concurrentCollection.BlockingQueueDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "COWADemo",
+            "request": "launch",
+            "mainClass": "concurrentCollection.COWADemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ConcurrentCache",
+            "request": "launch",
+            "mainClass": "concurrentCollection.ConcurrentCache",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ExchangerDemo",
+            "request": "launch",
+            "mainClass": "concurrentCollection.ExchangerDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "MultiStageTour",
+            "request": "launch",
+            "mainClass": "concurrentCollection.MultiStageTour",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "Restaurant",
+            "request": "launch",
+            "mainClass": "concurrentCollection.Restaurant",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "SynchronisedCollections",
+            "request": "launch",
+            "mainClass": "concurrentCollection.SynchronisedCollections",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "CachedThreadPoolDemo",
+            "request": "launch",
+            "mainClass": "executorService.CachedThreadPoolDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "CallableDemo",
+            "request": "launch",
+            "mainClass": "executorService.CallableDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "CpuIntensiveTask",
+            "request": "launch",
+            "mainClass": "executorService.CpuIntensiveTask",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "FixedThreadPoolDemo",
+            "request": "launch",
+            "mainClass": "executorService.FixedThreadPoolDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ScheduledExecutorDemo",
+            "request": "launch",
+            "mainClass": "executorService.ScheduledExecutorDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "SingleThreadExecutorDemo",
+            "request": "launch",
+            "mainClass": "executorService.SingleThreadExecutorDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "FJPDemo",
+            "request": "launch",
+            "mainClass": "forkJoin.FJPDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "WorkLoadSplitDemo",
+            "request": "launch",
+            "mainClass": "forkJoin.WorkLoadSplitDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ConditionDemo",
+            "request": "launch",
+            "mainClass": "locks.ConditionDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ReadWriteLockDemo",
+            "request": "launch",
+            "mainClass": "locks.ReadWriteLockDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ReentrantLockDemo",
+            "request": "launch",
+            "mainClass": "locks.ReentrantLockDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "AtomicVariable",
+            "request": "launch",
+            "mainClass": "otherConcepts.AtomicVariable",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "DeadlockDemo",
+            "request": "launch",
+            "mainClass": "otherConcepts.DeadlockDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "Scraper",
+            "request": "launch",
+            "mainClass": "otherConcepts.Scraper",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "SequentialExecutionDemo",
+            "request": "launch",
+            "mainClass": "sequential.SequentialExecutionDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "LockDemo",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.LockDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "LockWithCustomObjects",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.LockWithCustomObjects",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ProduceConsumerWithLocks",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.ProduceConsumerWithLocks",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "ProducerConsumer",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.ProducerConsumer",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "SynchronisationDemo",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.SynchronisationDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "SynchronisationIssue",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.SynchronisationIssue",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "WaitNotifyDemo",
+            "request": "launch",
+            "mainClass": "threadSynchronisation.WaitNotifyDemo",
+            "projectName": "Multithreading"
+        },
+        {
+            "type": "java",
+            "name": "Runner",
+            "request": "launch",
+            "mainClass": "usecase.Runner",
+            "projectName": "Multithreading"
+        }
+    ]
+}
