@@ -1,21 +1,20 @@
 package threadSynchronisation;
 
-public class LockWithCustomObjects {
-    private static int counter1 = 0;
-    private static int counter2 = 0;
-
+public class LockWithCustomObject {
+    public static int counter1 = 0;
+    public static int counter2 = 0;
     private static final Object lock1 = new Object();
     private static final Object lock2 = new Object();
 
     public static void main(String[] args) {
         Thread one = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 10000; i += 1) {
                 increment1();
             }
         });
 
         Thread two = new Thread(() -> {
-            for (int i = 0; i < 10000; i++) {
+            for (int i = 0; i < 10000; i += 1) {
                 increment2();
             }
         });
@@ -30,18 +29,19 @@ public class LockWithCustomObjects {
             throw new RuntimeException(e);
         }
 
-        System.out.println("Counter values : Counter 1 " + counter1 + " Counter 2 " + counter2);
+        System.out.println("Counter 1 value: " + counter1);
+        System.out.println("Counter 2 value: " + counter2);
     }
 
     private static void increment1() {
         synchronized (lock1) {
-            counter1++;
+            counter1 += 1;
         }
     }
 
     private static void increment2() {
         synchronized (lock2) {
-            counter2++;
+            counter2 += 1;
         }
     }
 }
