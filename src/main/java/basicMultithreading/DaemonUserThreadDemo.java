@@ -3,13 +3,13 @@ package basicMultithreading;
 public class DaemonUserThreadDemo {
     public static void main(String[] args) {
         Thread bgThread = new Thread(new DaemonHelper());
-        Thread usrThread = new Thread(new UserThreadHelper());
+        Thread userThread = new Thread(new UserThreadHelper());
         bgThread.setDaemon(true);
-
         bgThread.start();
-        usrThread.start();
+        userThread.start();
     }
 }
+
 
 class DaemonHelper implements Runnable {
     @Override
@@ -21,11 +21,14 @@ class DaemonHelper implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            count++;
-            System.out.println("Daemon helper running ...");
+            count += 1;
+            System.out.println("Demo helper is running ....");
+
         }
     }
+
 }
+
 
 class UserThreadHelper implements Runnable {
     @Override
@@ -35,6 +38,7 @@ class UserThreadHelper implements Runnable {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("User Thread Helper done with execution!");
+        System.out.println("User thread done with execution ....");
     }
 }
+
