@@ -1,59 +1,76 @@
 package threadSynchronisation;
 
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProduceConsumerWithLocks {
     public static void main(String[] args) {
-        Processor processor = new Processor();
+        Worker worker = new Worker(5, 0);
 
-        Thread one = new Thread(() -> {
+        Thread producer = new Thread(() -> {
             try {
-                processor.produce();
+                worker.produce();
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException();
             }
         });
 
-        Thread two = new Thread(() -> {
+        Thread consumer = new Thread(() -> {
             try {
-                processor.consume();
+                worker.consume();
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException();
             }
         });
 
-        one.start();
-        two.start();
+        producer.start();
+        consumer.start();
 
-        try {
-            one.join();
-            two.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
 
-class Processor {
-    private final Lock lock = new ReentrantLock();
-    private final Condition condition = lock.newCondition();
+class Worker {
+    private int sequence = 0;
+    private final Integer top;
+    private final Integer bottom;
+    private final List<Integer> container;
+    private final Object lock = new Object();
+
+    public Worker(Integer top, Integer bottom) {
+        this.top = top;
+        this.bottom = bottom;
+        this.container = new ArrayList<>();
+    }
 
     public void produce() throws InterruptedException {
-        lock.lock();
-        System.out.println("Producing...");
-        condition.await();
-        System.out.println("Again from the producer");
-        lock.unlock();
+        synchronized (lock) {
+            while (true) {
+                if (container.size() == top) {
+                    System.out.println("Container is full , waiting for item to be removed ....");
+                    lock.wait();
+                } else {
+                    System.out.println(sequence + " Added to container");
+                    container.add(sequence += 1);
+                    lock.notify();
+                }
+                Thread.sleep(500);
+            }
+        }
     }
 
     public void consume() throws InterruptedException {
-        Thread.sleep(2000);
-        lock.lock();
-        System.out.println("Consuming...");
-        Thread.sleep(3000);
-        condition.signal();
-        lock.unlock();
+        synchronized (lock) {
+            while (true) {
+                if (container.size() == bottom) {
+                    System.out.println("Conteiner empty, waiting for items to be added ...");
+                    lock.notify();
+                } else {
+                    System.out.println(container.removeFirst() + " removed from the container...");
+                    lock.notify();
+                }
+                Thread.sleep(500);
+            }
+        }
     }
+
 }
