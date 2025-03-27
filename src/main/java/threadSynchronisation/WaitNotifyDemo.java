@@ -16,7 +16,7 @@ public class WaitNotifyDemo {
             try {
                 two();
             } catch (InterruptedException e) {
-                throw new RuntimeException(e);
+                throw new RuntimeException();
             }
         });
 
@@ -26,17 +26,17 @@ public class WaitNotifyDemo {
 
     private static void one() throws InterruptedException {
         synchronized (LOCK) {
-            System.out.println("Hello from method one...");
+            System.out.println("Hell from method one....");
             LOCK.wait();
-            System.out.println("Back Again in the method one");
+            System.out.println("back again in the method one");
         }
     }
 
     private static void two() throws InterruptedException {
         synchronized (LOCK) {
-            System.out.println("Hello from method two...");
-            LOCK.notify(); // Remaining code lines in the block are executed
-            System.out.println("Hello from method two even after notify...");
+            System.out.println("Hello from method two ....");
+            LOCK.notify();
+            System.out.println("Hello from thread two after notifying...");
         }
     }
 }
