@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 public class SingleThreadExecutorDemo {
     public static void main(String[] args) {
         try (ExecutorService service = Executors.newSingleThreadExecutor()) {
-            for (int i = 0; i < 5; i++) {
+            for (int i = 0; i < 5; i += 1) {
                 service.execute(new Task(i));
             }
         }
@@ -22,11 +22,12 @@ class Task implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Task with ID : " + taskId + " being executed by thread : " + Thread.currentThread().getName());
+        System.out.println("Task with ID " + taskId + " being executed by thread " + Thread.currentThread().getName());
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
+
 }
